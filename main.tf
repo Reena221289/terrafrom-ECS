@@ -104,15 +104,15 @@ resource "aws_ecs_task_definition" "hello_world" {
   family                   = "hello-world-app"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = 1024
-  memory                   = 2048
+  cpu                      = 256
+  memory                   = 512
 
   container_definitions = <<DEFINITION
 [
   {
-    "image": "registry.gitlab.com/architect-io/artifacts/nodejs-hello-world:latest",
-    "cpu": 1024,
-    "memory": 2048,
+    "image": "kodekloud/ecs-project1",
+    "cpu": 256,
+    "memory": 512,
     "name": "hello-world-app",
     "networkMode": "awsvpc",
     "portMappings": [
