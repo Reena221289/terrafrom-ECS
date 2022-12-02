@@ -162,7 +162,7 @@ resource "aws_ecs_service" "hello_world" {
   load_balancer {
     target_group_arn = aws_lb_target_group.hello_world.id
     container_name   = "hello-world-app"
-    container_port   = 3000
+    container_port   = 8000
   }
 
   depends_on = [aws_lb_listener.hello_world]
