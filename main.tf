@@ -110,15 +110,15 @@ resource "aws_ecs_task_definition" "hello_world" {
   container_definitions = <<DEFINITION
 [
   {
-    "image": "kodekloud/ecs-project1",
+    "image": "snipe/snipe-it",
     "cpu": 256,
     "memory": 512,
     "name": "hello-world-app",
     "networkMode": "awsvpc",
     "portMappings": [
       {
-        "containerPort": 3000,
-        "hostPort": 3000
+        "containerPort": 8000,
+        "hostPort": 8000
       }
     ]
   }
@@ -131,8 +131,8 @@ resource "aws_security_group" "hello_world_task" {
 
   ingress {
     protocol        = "tcp"
-    from_port       = 3000
-    to_port         = 3000
+    from_port       = 8000
+    to_port         = 8000
     security_groups = [aws_security_group.lb.id]
   }
 
