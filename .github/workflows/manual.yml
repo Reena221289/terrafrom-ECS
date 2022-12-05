@@ -1,4 +1,4 @@
-name: "destroy"
+name: "newdestroy"
 on:
   # Manual trigger
   workflow_dispatch:
