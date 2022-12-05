@@ -110,7 +110,7 @@ resource "aws_ecs_task_definition" "hello_world" {
   container_definitions = <<DEFINITION
 [
   {
-    "image": "kesarivamshi/kubernetes",
+    "image": "ReenaJenifer/kubernetes",
     "cpu": 256,
     "memory": 512,
     "name": "hello-world-app",
